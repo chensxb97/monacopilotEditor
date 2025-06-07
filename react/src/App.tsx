@@ -63,16 +63,16 @@ function App() {
     })
 
 
-    const javascriptEditor = monaco.editor.create(editorRef.current, {
-      value: '// Start coding in javascript!\n',
-      language: 'javascript',
-      theme: 'vs-dark',
-    })
+    // const javascriptEditor = monaco.editor.create(editorRef.current, {
+    //   value: '// Start coding in javascript!\n',
+    //   language: 'javascript',
+    //   theme: 'vs-dark',
+    // })
 
-    const jsCompletion = registerCompletion(monaco, javascriptEditor, {
-      language: 'javascript',
-      endpoint: 'http://localhost:5000/code-completion',
-    })
+    // const jsCompletion = registerCompletion(monaco, javascriptEditor, {
+    //   language: 'javascript',
+    //   endpoint: 'http://localhost:5000/code-completion',
+    // })
 
     const bosunEditor = monaco.editor.create(editorRef.current, {
       value: '// Start coding in Bosun...!\n',
@@ -82,13 +82,13 @@ function App() {
 
     const bosunCompletion = registerCompletion(monaco, bosunEditor, {
       language: 'bosun',
-      endpoint: 'http://localhost:5000/bosun-code-completion',
+      endpoint: 'http://localhost:5000/code-completion',
     })
 
     return () => {
-      jsCompletion.deregister()
+      // jsCompletion.deregister()
       bosunCompletion.deregister()
-      javascriptEditor.dispose()
+      // javascriptEditor.dispose()
       bosunEditor.dispose()
     }
   }, [])
