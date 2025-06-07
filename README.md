@@ -3,10 +3,10 @@ Experimenting different models to power the [monacopilot](https://monacopilot.de
 
 ## Frontend Implementations
 All implementations use the same endpoint: `http://localhost:3000`.
-1. Vanilla (/vanilla)
+1. Vanilla `/vanilla`
 The initial boilerplate is provided [here](https://monacopilot.dev/examples/vanilla-js.html).
 
-2. React (/react-frontend).
+2. React `/react-frontend`.
     - Setup `create-react-app`
     ```shell
     npx create-react-app frontend --template typescript
