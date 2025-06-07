@@ -1,5 +1,5 @@
 # monacopilotEditor
-Experimenting different models to power the [monacopilot](https://monacopilot.dev/) GitHub Copilot-style AI completions plugin for Monaco Editor.
+Experimenting with different models to power the [monacopilot](https://monacopilot.dev/) GitHub Copilot-style AI completions plugin for Monaco Editor.
 
 ## Frontend Implementations
 All implementations use the same endpoint: `http://localhost:3000`.
