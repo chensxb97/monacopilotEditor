@@ -14,7 +14,7 @@ require(['vs/editor/editor.main'], function () {
     const completion = monacopilot.registerCompletion(monaco, editor, {
         language: 'javascript',
         // URL to the API endpoint we'll create in server.js below
-        endpoint: 'http://localhost:3000/code-completion',
+        endpoint: 'http://localhost:5000/code-completion',
     });
 
     window.addEventListener('beforeunload', () => {
