@@ -86,8 +86,7 @@ The initial boilerplate is provided [here](https://monacopilot.dev/examples/vani
     ```
 
 ## Backend
-A common backend implementation: `/backend`, is used as the server to power the frontends, using the endpoint: `http://localhost:5000`. Basic setup is provided in the same boilerplate used for
-[vanilla js](https://monacopilot.dev/examples/vanilla-js.html).
+A common backend: `http://localhost:5000` is used to power the frontends. Implementation can be found in the `/backend` folder. Basic setup is provided in the same boilerplate used for [vanilla js](https://monacopilot.dev/examples/vanilla-js.html).
 
 ### Setup
 - Create a `.env` file in the `backend` folder. Do not ever commit this file!
