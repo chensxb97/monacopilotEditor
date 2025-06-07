@@ -90,6 +90,7 @@ A common backend implementation: `/backend`, is used as the server to power the 
 [vanilla js](https://monacopilot.dev/examples/vanilla-js.html).
 
 ### Setup
+- Create a `.env` file in the `backend` folder. Do not ever commit this file!
 - A mistral API key is mandatory in the `.env` file before running the server.
 ```javascript
 MISTRAL_API_KEY=<YOUR_API_KEY>
