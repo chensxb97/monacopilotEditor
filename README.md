@@ -1,4 +1,4 @@
-# codeCompletionAI
+# monacopilotEditor
 Experimenting different models to power the [monacopilot](https://monacopilot.dev/) GitHub Copilot-style AI completions plugin for Monaco Editor.
 
 ## Frontend Implementations
