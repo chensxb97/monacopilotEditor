@@ -13,7 +13,7 @@ function App() {
       tokenizer: {
         root: [
           // Keywords
-          [/\b(alert|template|crit|warn|ok|unknown|macro|lookup|len|avg|min|max|sum|count|diff|change|abs|pct_diff|over|foreach|groupBy)\b/, 'keyword'],
+          [/\b(alert|template|crit|fail|low|warn|ok|unknown|macro|lookup|len|avg|min|max|sum|count|diff|change|abs|pct_diff|over|foreach|groupBy)\b/, 'keyword'],
 
           // Prometheus-style query wrapper
           [/\bq\(/, { token: 'function', next: '@query' }],
@@ -30,6 +30,7 @@ function App() {
           // Brackets and operators
           [/[{}[\]()]/, '@brackets'],
           [/[=><!]+/, 'operator'],
+
         ],
 
         string: [
@@ -62,7 +63,6 @@ function App() {
       },
     })
 
-
     // const javascriptEditor = monaco.editor.create(editorRef.current, {
     //   value: '// Start coding in javascript!\n',
     //   language: 'javascript',
@@ -74,28 +74,27 @@ function App() {
     //   endpoint: 'http://localhost:5000/code-completion',
     // })
 
-    const bosunEditor = monaco.editor.create(editorRef.current, {
+    const editor = monaco.editor.create(editorRef.current, {
       value: '// Start coding in Bosun...!\n',
       language: 'bosun',
       theme: 'vs-dark',
     })
 
-    const bosunCompletion = registerCompletion(monaco, bosunEditor, {
+    const completion = registerCompletion(monaco, editor, {
       language: 'bosun',
       endpoint: 'http://localhost:5000/code-completion',
+      technologies: ['bosun', 'prometheus', 'clickhouse', 'splunk']
     })
 
     return () => {
-      // jsCompletion.deregister()
-      bosunCompletion.deregister()
-      // javascriptEditor.dispose()
-      bosunEditor.dispose()
+      completion.deregister()
+      editor.dispose()
     }
   }, [])
 
   return (
     <div className="App" style={{ padding: 20 }}>
-      <h1>Monaco Editor + Monacopilot in CRA</h1>
+      <h1>Custom Monaco Editor with Monacopilot enabled</h1>
       <div
         ref={editorRef}
         style={{ width: 800, height: 400, border: '1px solid #ccc' }}
